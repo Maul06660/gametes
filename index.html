@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Ular Tangga Edukatif</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f0f8ff;
+  }
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    background: white;
+  }
+  .p1 { background: orange; color: white; border-radius: 50%; padding: 4px; }
+  .p2 { background: blue; color: white; border-radius: 50%; padding: 4px; }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border-radius: 8px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  button:disabled { background: gray; }
+</style>
+</head>
+<body>
+
+<h2>🎲 Ular Tangga Edukatif (2 Pemain)</h2>
+<h3 id="giliran">Giliran: Player 1</h3>
+
+<p id="soal">Klik "Buat Soal"</p>
+<input type="number" id="jawaban">
+<br>
+<button onclick="buatSoal()">Buat Soal</button>
+<button id="daduBtn" onclick="kocokDadu()" disabled>Kocok Dadu</button>
+
+<h3 id="info"></h3>
+
+<table id="papan"></table>
+
+<script src="game.js"></script>
+</body>
+</html>
