@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>QR Code Game Ular Tangga</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f0f8ff;
+}
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>🎮 Game Ular Tangga Edukatif</h2>
+  <p>Scan QR Code untuk bermain</p>
+
+  <img id="qr" width="300">
+
+  <p>
+    Link Game:<br>
+    <a id="linkGame" target="_blank"></a>
+  </p>
+</div>
+
+<script>
+  // GANTI link ini setelah upload ke GitHub Pages
+  const link = "https://username.github.io/ular-tangga/";
+
+  document.getElementById("qr").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" + encodeURIComponent(link);
+
+  document.getElementById("linkGame").href = link;
+  document.getElementById("linkGame").innerText = link;
+</script>
+
+</body>
+</html>
