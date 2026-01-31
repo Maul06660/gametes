@@ -1,6 +1,6 @@
 const ukuran = 5; // papan 1-25
-let posisi = [1, 1]; // posisi player 1 & 2
-let player = 0; // 0 = player 1, 1 = player 2
+let posisi = [1, 1, 1, 1]; // posisi player 1-4
+let player = 0; // 0 = player 1, 1 = player 2, 2 = player 3, 3 = player 4
 let angka1, angka2;
 
 // ular & tangga
@@ -27,6 +27,8 @@ function buatPapan() {
 
       if (num === posisi[0]) cell.innerHTML += `<div class="p1">1</div>`;
       if (num === posisi[1]) cell.innerHTML += `<div class="p2">2</div>`;
+      if (num === posisi[2]) cell.innerHTML += `<div class="p3">3</div>`;
+      if (num === posisi[3]) cell.innerHTML += `<div class="p4">4</div>`;
 
       row.appendChild(cell);
     }
@@ -58,7 +60,7 @@ document.getElementById("jawaban").addEventListener("input", function() {
 });
 
 function gantiPlayer() {
-  player = player === 0 ? 1 : 0;
+  player = (player + 1) % 4; // ganti ke player berikutnya (1-4)
   updateGiliran();
 }
 
@@ -78,7 +80,7 @@ function kocokDadu() {
 
   if (posisi[player] === 25) {
     alert("🎉 Player " + (player + 1) + " menang!");
-    posisi = [1, 1];
+    posisi = [1, 1, 1, 1];
     player = 0;
   }
 
